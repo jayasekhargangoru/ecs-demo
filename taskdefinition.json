@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "ecs-demo",
-            "image": "REPOSITORY_URI:IMAGE_TAG",
+            "image": "",
             "portMappings": [
                 {
                     "name": "ecs-demo-80-tcp",
@@ -19,7 +19,7 @@
                 "options": {
                     "awslogs-create-group": "true",
                     "awslogs-group": "/ecs/blue-green-service",
-                    "awslogs-region": "AWS_REGION",
+                    "awslogs-region": "ap-south-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }
