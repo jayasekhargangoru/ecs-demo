@@ -54,3 +54,5 @@ jobs:
           --cluster ProjectK-ecs-cluster \
           --desired-count 1 \
           --task-definition blue-green-service
+        # wait till the cluster service is updated
+        aws ecs wait services-stable --cluster ProjectK-ecs-cluster --services blue-green-deploy --region ap-south-1
