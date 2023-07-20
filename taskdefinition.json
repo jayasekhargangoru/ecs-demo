@@ -1,16 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:180026694417:task-definition/blue-green-service:1",
     "containerDefinitions": [
         {
             "name": "ecs-demo",
-            "image": "",
+            "image": "180026694417.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo:4",
             "portMappings": [
                 {
-                    "name": "ecs-demo-80-tcp",
                     "containerPort": 80,
                     "hostPort": 0,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
+                    "protocol": "tcp"
                 }
             ],
             "essential": true,
@@ -29,38 +26,6 @@
     "taskRoleArn": "arn:aws:iam::180026694417:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::180026694417:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
-    "revision": 1,
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-        }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2"
-    ],
     "requiresCompatibilities": [
         "EC2"
     ],
