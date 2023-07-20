@@ -2,7 +2,7 @@
     "containerDefinitions": [
         {
             "name": "ecs-demo",
-            "image": "180026694417.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo:4",
+            "image": "180026694417.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo:7",
             "portMappings": [
                 {
                     "containerPort": 80,

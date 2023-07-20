@@ -43,3 +43,14 @@ jobs:
         cat taskdefinition.json | jq --arg uri "$ECR_REGISTRY/$ECR_REPOSITORY" --arg tag "$IMAGE_TAG" '.containerDefinitions[0].image = "\($uri):\($tag)"' > taskdefinition.tmp
         mv taskdefinition.tmp taskdefinition.json
         cat taskdefinition.json
+
+        # update the tastdefinition file with the new image tag.
+        aws ecs register-task-definition \
+          --cli-input-json file://taskdefinition.json
+
+        # updating the ecs cluster service configuration
+        aws ecs update-service \
+          --service blue-green-deploy \
+          --cluster ProjectK-ecs-cluster \
+          --desired-count 1 \
+          --task-definition blue-green-service
